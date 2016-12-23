@@ -10,12 +10,12 @@ entity relationships by SQLs from source codes and RDMS query logs.
 
 ## Quickstart
 
-  ```shell
+```
   $ cd mysql-er
   $ pip install -r requirements.txt
   $ python sql_er.py -m text -i examples/example.sql -o examples/example-text.html
   $ python sql_er.py -m general_log -i examples/example.log -o examples/example-general-log.html
-  ```shell
+```
 
   `example-text.html` and `example-general-log.html` will be created under `examples` folder.
 
