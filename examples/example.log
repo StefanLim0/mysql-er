@@ -1,0 +1,6 @@
+/usr/sbin/mysqld, Version: 5.6.23-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/lib/mysql/mysql.sock
+Time                 Id Command    Argument
+161216  9:43:19	    2 Query	SHOW MASTER STATUS
+		415902 Init DB	db
+		415902 Query	select a.id, b.name from ac a join bc b on a.id=b.id or a.id=b.iid where a.cnt > 10

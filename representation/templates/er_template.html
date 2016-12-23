@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ER</title>
+</head>
+<body>
+    <div>
+        <ul>
+            {% for db_name, tbs in dbs.items() %}
+            <li>
+                <a name="{{ db_name }}">{{ db_name }}</a>
+                <ul>
+                    {% for tb_name, fds in tbs.items() %}
+                    <li>
+                        <a name="{{ tb_name }}">{{ tb_name }}</a>
+                        <ul>
+                            {% for fd_name, foreigns in fds.items() %}
+                            <li>
+                                <a name="{{ db_name + '.' + tb_name + '.' + fd_name }}"> {{ fd_name }}    </a>
+                                {% for foreign in foreigns %}
+                                    <a href="#{{ foreign }}">{{ foreign }}    </a>
+                                {% endfor %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

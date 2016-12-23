@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sqlextractor package &#8212; mysql-er 0.0a1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0a1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sqlextractor-package">
+<h1>sqlextractor package<a class="headerlink" href="#sqlextractor-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-sqlextractor.SqlExtractor">
+<span id="sqlextractor-sqlextractor-module"></span><h2>sqlextractor.SqlExtractor module<a class="headerlink" href="#module-sqlextractor.SqlExtractor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sqlextractor.SqlExtractor.MybatisInlineSqlExtractor">
+<em class="property">class </em><code class="descclassname">sqlextractor.SqlExtractor.</code><code class="descname">MybatisInlineSqlExtractor</code><span class="sig-paren">(</span><em>dir</em>, <em>encoding='utf-8'</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MybatisInlineSqlExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sqlextractor.SqlExtractor.SqlExtractor" title="sqlextractor.SqlExtractor.SqlExtractor"><code class="xref py py-class docutils literal"><span class="pre">sqlextractor.SqlExtractor.SqlExtractor</span></code></a></p>
+<p>Class for inline-mybatis sql extractor</p>
+<dl class="staticmethod">
+<dt id="sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.find_right_paren_pos">
+<em class="property">static </em><code class="descname">find_right_paren_pos</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.find_right_paren_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.get_selects_from_text">
+<em class="property">static </em><code class="descname">get_selects_from_text</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.get_selects_from_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.get_sqls">
+<code class="descname">get_sqls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.get_sqls" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts sqls from the java files with mybatis sqls.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>A list of <a class="reference internal" href="#sqlextractor.SqlExtractor.SQL" title="sqlextractor.SqlExtractor.SQL"><code class="xref py py-class docutils literal"><span class="pre">SQL</span></code></a>. For example:
+[SQL(&#8216;&#8217;, u&#8217;select a.id, b.name from db.ac a join db.bc b on a.id=b.id or a.id=b.iid where a.cnt &gt; 10&#8217;)]</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.remove_comment">
+<em class="property">static </em><code class="descname">remove_comment</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.remove_comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.remove_params">
+<em class="property">static </em><code class="descname">remove_params</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MybatisInlineSqlExtractor.remove_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sqlextractor.SqlExtractor.MysqlGeneralLogSqlExtractor">
+<em class="property">class </em><code class="descclassname">sqlextractor.SqlExtractor.</code><code class="descname">MysqlGeneralLogSqlExtractor</code><span class="sig-paren">(</span><em>log_path</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MysqlGeneralLogSqlExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sqlextractor.SqlExtractor.SqlExtractor" title="sqlextractor.SqlExtractor.SqlExtractor"><code class="xref py py-class docutils literal"><span class="pre">sqlextractor.SqlExtractor.SqlExtractor</span></code></a></p>
+<p>Class for mysql-general-log sql extractor</p>
+<dl class="method">
+<dt id="sqlextractor.SqlExtractor.MysqlGeneralLogSqlExtractor.get_sqls">
+<code class="descname">get_sqls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.MysqlGeneralLogSqlExtractor.get_sqls" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts sqls from mysql general log file.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>A list of <a class="reference internal" href="#sqlextractor.SqlExtractor.SQL" title="sqlextractor.SqlExtractor.SQL"><code class="xref py py-class docutils literal"><span class="pre">SQL</span></code></a>. For example:
+[SQL(&#8216;&#8217;, u&#8217;select a.id, b.name from db.ac a join db.bc b on a.id=b.id or a.id=b.iid where a.cnt &gt; 10&#8217;)]</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sqlextractor.SqlExtractor.SQL">
+<em class="property">class </em><code class="descclassname">sqlextractor.SqlExtractor.</code><code class="descname">SQL</code><span class="sig-paren">(</span><em>default_db</em>, <em>sql</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.SQL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class for SQL</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sqlextractor.SqlExtractor.SqlExtractor">
+<em class="property">class </em><code class="descclassname">sqlextractor.SqlExtractor.</code><code class="descname">SqlExtractor</code><a class="headerlink" href="#sqlextractor.SqlExtractor.SqlExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Base class for sql extractor</p>
+<dl class="method">
+<dt id="sqlextractor.SqlExtractor.SqlExtractor.get_sqls">
+<code class="descname">get_sqls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.SqlExtractor.get_sqls" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts sqls.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>A list of <a class="reference internal" href="#sqlextractor.SqlExtractor.SQL" title="sqlextractor.SqlExtractor.SQL"><code class="xref py py-class docutils literal"><span class="pre">SQL</span></code></a>. For example:
+[SQL(&#8216;&#8217;, u&#8217;select a.id, b.name from db.ac a join db.bc b on a.id=b.id or a.id=b.iid where a.cnt &gt; 10&#8217;)]</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sqlextractor.SqlExtractor.TextSqlExtractor">
+<em class="property">class </em><code class="descclassname">sqlextractor.SqlExtractor.</code><code class="descname">TextSqlExtractor</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.TextSqlExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sqlextractor.SqlExtractor.SqlExtractor" title="sqlextractor.SqlExtractor.SqlExtractor"><code class="xref py py-class docutils literal"><span class="pre">sqlextractor.SqlExtractor.SqlExtractor</span></code></a></p>
+<p>Class for file sql extractor</p>
+<dl class="method">
+<dt id="sqlextractor.SqlExtractor.TextSqlExtractor.get_sqls">
+<code class="descname">get_sqls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlextractor.SqlExtractor.TextSqlExtractor.get_sqls" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts sqls from the text file.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>A list of <a class="reference internal" href="#sqlextractor.SqlExtractor.SQL" title="sqlextractor.SqlExtractor.SQL"><code class="xref py py-class docutils literal"><span class="pre">SQL</span></code></a>. For example:
+[SQL(&#8216;&#8217;, u&#8217;select a.id, b.name from db.ac a join db.bc b on a.id=b.id or a.id=b.iid where a.cnt &gt; 10&#8217;)]</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sqlextractor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sqlextractor" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">sqlextractor package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-sqlextractor.SqlExtractor">sqlextractor.SqlExtractor module</a></li>
+<li><a class="reference internal" href="#module-sqlextractor">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sqlextractor.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Stefan Lim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/sqlextractor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
