@@ -2,64 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <title>ER</title>
+    <style>
+        .list-group.list-group-root {
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .list-group.list-group-root .list-group {
+          margin-bottom: 0;
+        }
+
+        .list-group.list-group-root .list-group-item {
+          border-radius: 0;
+          border-width: 1px 0 0 0;
+        }
+
+        .list-group.list-group-root > .list-group-item:first-child {
+          border-top-width: 0;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group-item {
+          padding-left: 30px;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group > .list-group-item {
+          padding-left: 60px;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group > .list-group > .list-group-item {
+          padding-left: 90px;
+        }
+
+        .list-group-item .glyphicon {
+          margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <ul>
+    <div class="list-group list-group-root well">
+        
+        <a href="#db" class="list-group-item" data-toggle="collapse">
+            <i class="glyphicon glyphicon-chevron-right"></i>db
+        </a>
+        <div class="list-group collapse" id="db">
             
-            <li>
-                <a name="db">db</a>
-                <ul>
+            <a href="#db_ac" class="list-group-item" data-toggle="collapse">
+                <i class="glyphicon glyphicon-chevron-right"></i>ac
+            </a>
+            <div class="list-group collapse" id="db_ac">
+                
+                <a href="#db_ac_id" class="list-group-item" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-chevron-right"></i>id
+                </a>
+                <div class="list-group collapse" id="db_ac_id">
                     
-                    <li>
-                        <a name="ac">ac</a>
-                        <ul>
-                            
-                            <li>
-                                <a name="db.ac.id"> id    </a>
-                                
-                                    <a href="#db.bc.id">db.bc.id    </a>
-                                
-                            </li>
-                            
-                        </ul>
-                    </li>
+                        <a href="#db_bc_id" class="list-group-item">db.bc.id</a>
                     
-                    <li>
-                        <a name="de">de</a>
-                        <ul>
-                            
-                            <li>
-                                <a name="db.de.uid"> uid    </a>
-                                
-                                    <a href="#db.bc.id">db.bc.id    </a>
-                                
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <a name="bc">bc</a>
-                        <ul>
-                            
-                            <li>
-                                <a name="db.bc.id"> id    </a>
-                                
-                                    <a href="#db.ac.id">db.ac.id    </a>
-                                
-                                    <a href="#db.de.uid">db.de.uid    </a>
-                                
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    
-                </ul>
-            </li>
+                </div>
+                
+            </div>
             
-        </ul>
+            <a href="#db_de" class="list-group-item" data-toggle="collapse">
+                <i class="glyphicon glyphicon-chevron-right"></i>de
+            </a>
+            <div class="list-group collapse" id="db_de">
+                
+                <a href="#db_de_uid" class="list-group-item" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-chevron-right"></i>uid
+                </a>
+                <div class="list-group collapse" id="db_de_uid">
+                    
+                        <a href="#db_bc_id" class="list-group-item">db.bc.id</a>
+                    
+                </div>
+                
+            </div>
+            
+            <a href="#db_bc" class="list-group-item" data-toggle="collapse">
+                <i class="glyphicon glyphicon-chevron-right"></i>bc
+            </a>
+            <div class="list-group collapse" id="db_bc">
+                
+                <a href="#db_bc_id" class="list-group-item" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-chevron-right"></i>id
+                </a>
+                <div class="list-group collapse" id="db_bc_id">
+                    
+                        <a href="#db_ac_id" class="list-group-item">db.ac.id</a>
+                    
+                        <a href="#db_de_uid" class="list-group-item">db.de.uid</a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
     </div>
 </body>
 </html>

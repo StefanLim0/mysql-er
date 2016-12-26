@@ -5,6 +5,7 @@ from sqlextractor.SqlExtractor import TextSqlExtractor, MysqlGeneralLogSqlExtrac
 from sqlparser.ERExtractor import get_er_from_sql
 from representation import create_er_html
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-m', '--mode', help='`text`, `mybatis_inline` or `general_log`', required=True)

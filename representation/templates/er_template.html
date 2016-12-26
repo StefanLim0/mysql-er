@@ -2,34 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <title>ER</title>
+    <style>
+        .list-group.list-group-root {
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .list-group.list-group-root .list-group {
+          margin-bottom: 0;
+        }
+
+        .list-group.list-group-root .list-group-item {
+          border-radius: 0;
+          border-width: 1px 0 0 0;
+        }
+
+        .list-group.list-group-root > .list-group-item:first-child {
+          border-top-width: 0;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group-item {
+          padding-left: 30px;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group > .list-group-item {
+          padding-left: 60px;
+        }
+
+        .list-group.list-group-root > .list-group > .list-group > .list-group > .list-group-item {
+          padding-left: 90px;
+        }
+
+        .list-group-item .glyphicon {
+          margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <ul>
-            {% for db_name, tbs in dbs.items() %}
-            <li>
-                <a name="{{ db_name }}">{{ db_name }}</a>
-                <ul>
-                    {% for tb_name, fds in tbs.items() %}
-                    <li>
-                        <a name="{{ tb_name }}">{{ tb_name }}</a>
-                        <ul>
-                            {% for fd_name, foreigns in fds.items() %}
-                            <li>
-                                <a name="{{ db_name + '.' + tb_name + '.' + fd_name }}"> {{ fd_name }}    </a>
-                                {% for foreign in foreigns %}
-                                    <a href="#{{ foreign }}">{{ foreign }}    </a>
-                                {% endfor %}
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
+    <div class="list-group list-group-root well">
+        {% for db_name, tbs in dbs.items() %}
+        <a href="#{{ db_name }}" class="list-group-item" data-toggle="collapse">
+            <i class="glyphicon glyphicon-chevron-right"></i>{{ db_name }}
+        </a>
+        <div class="list-group collapse" id="{{ db_name }}">
+            {% for tb_name, fds in tbs.items() %}
+            <a href="#{{ db_name + '_' + tb_name }}" class="list-group-item" data-toggle="collapse">
+                <i class="glyphicon glyphicon-chevron-right"></i>{{ tb_name }}
+            </a>
+            <div class="list-group collapse" id="{{ db_name + '_' + tb_name }}">
+                {% for fd_name, foreigns in fds.items() %}
+                <a href="#{{ db_name + '_' + tb_name + '_' + fd_name }}" class="list-group-item" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-chevron-right"></i>{{ fd_name }}
+                </a>
+                <div class="list-group collapse" id="{{ db_name + '_' + tb_name + '_' + fd_name }}">
+                    {% for foreign in foreigns %}
+                        <a href="#{{ foreign.replace('.', '_') }}" class="list-group-item">{{ foreign }}</a>
                     {% endfor %}
-                </ul>
-            </li>
+                </div>
+                {% endfor %}
+            </div>
             {% endfor %}
-        </ul>
+        </div>
+        {% endfor %}
     </div>
 </body>
 </html>
