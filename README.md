@@ -1,6 +1,7 @@
-**Mysql-er** is a project to extract entity relationships from SQLs since foreign keys are not encouraged in RDMS
-due to performance degradation. Instead of creating ER diagram by trivial human work, this project tries to extract
-entity relationships by SQLs from source codes and RDMS query logs.
+Generally, foreign keys are not encouraged in RDMS due to performance degradation.
+Therefore, we cannot extract entity-relationships(ERs) from database schemas directly.
+Instead of creating ER diagram by trivial human work,
+**Mysql-er** tries to extract ERs from SQLs in source codes and RDMS's query logs.
 
 ## Feature Support
 
